@@ -30,15 +30,12 @@ public class Car implements Runnable {
         this.name = "Участник #" + CARS_COUNT;
         this.br = br;
     }
-    // CyclicBarrier br = new CyclicBarrier(race.getStages().size());
 
     @Override
     public void run() {
-        // CyclicBarrier br = new CyclicBarrier(CARS_COUNT);
         try {
             System.out.println(this.name + " готовится");
             Thread.sleep(500 + (int) (Math.random() * 800));
-            // br.await();
             System.out.println(this.name + " готов");
             br.await();
             br.await();
